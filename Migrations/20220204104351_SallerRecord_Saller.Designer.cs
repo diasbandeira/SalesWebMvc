@@ -53,7 +53,7 @@ namespace SalesWebMvc.Migrations
                     b.ToTable("Saller");
                 });
 
-            modelBuilder.Entity("SalesWebMvc.Models.SallesRecord", b =>
+            modelBuilder.Entity("SalesWebMvc.Models.SalesRecord", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -70,7 +70,7 @@ namespace SalesWebMvc.Migrations
 
                     b.HasIndex("SallerId");
 
-                    b.ToTable("SallesRecord");
+                    b.ToTable("SalesRecord");
                 });
 
             modelBuilder.Entity("SalesWebMvc.Models.Saller", b =>
@@ -80,10 +80,10 @@ namespace SalesWebMvc.Migrations
                         .HasForeignKey("DepartmentId");
                 });
 
-            modelBuilder.Entity("SalesWebMvc.Models.SallesRecord", b =>
+            modelBuilder.Entity("SalesWebMvc.Models.SalesRecord", b =>
                 {
                     b.HasOne("SalesWebMvc.Models.Saller", "Saller")
-                        .WithMany("SallesRecords")
+                        .WithMany("SalesRecords")
                         .HasForeignKey("SallerId");
                 });
 #pragma warning restore 612, 618

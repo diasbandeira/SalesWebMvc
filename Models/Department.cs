@@ -10,7 +10,7 @@ namespace SalesWebMvc.Models
     {
         public int Id { get; set; }
         public String Name { get; set; }
-        public ICollection<Saller> Sallers = new List<Saller>();
+        public ICollection<Seller> Sellers = new List<Seller>();
 
 
 
@@ -24,14 +24,14 @@ namespace SalesWebMvc.Models
             Name = name;
         }
 
-        public void AddSaller(Saller saller)
+        public void Addseller(Seller seller)
         {
-            Sallers.Add(saller);
+            Sellers.Add(seller);
         }
 
         public double TotalSales(DateTime initial, DateTime final)
         {
-            return Sallers.Sum(saller => saller.TotalSales(initial, final));
+            return Sellers.Sum(seller => seller.TotalSales(initial, final));
         }
     }
 }

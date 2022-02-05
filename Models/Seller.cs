@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SalesWebMvc.Models
 {
-    public class Saller
+    public class Seller
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,11 +13,11 @@ namespace SalesWebMvc.Models
         public DateTime BirthDate { get; set; }
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
-        public ICollection<SallesRecord> SallesRecords { get; set; } = new List<SallesRecord>();
+        public ICollection<SalesRecord> SalesRecords { get; set; } = new List<SalesRecord>();
 
-        public Saller() { }
+        public Seller() { }
 
-        public Saller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
+        public Seller(int id, string name, string email, DateTime birthDate, double baseSalary, Department department)
         {
             Id = id;
             Name = name;
@@ -27,19 +27,19 @@ namespace SalesWebMvc.Models
             Department = department;
         }
         
-        public void AddSaller(SallesRecord saller)
+        public void AddSaller(SalesRecord saller)
         {
-            SallesRecords.Add(saller);
+            SalesRecords.Add(saller);
         }
 
-        public void Remove(SallesRecord saller)
+        public void Remove(SalesRecord saller)
         {
-            SallesRecords.Remove(saller);
+            SalesRecords.Remove(saller);
         }
 
         public double TotalSales(DateTime initial, DateTime final)
         {
-            return SallesRecords.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount);
+            return SalesRecords.Where(sr => sr.Date >= initial && sr.Date <= final).Sum(sr => sr.Amount);
         }
 
 

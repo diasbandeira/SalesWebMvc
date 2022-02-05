@@ -9,7 +9,7 @@ namespace SalesWebMvc.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Saller",
+                name: "Seller",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -32,7 +32,7 @@ namespace SalesWebMvc.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SallesRecord",
+                name: "SalesRecord",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -44,33 +44,33 @@ namespace SalesWebMvc.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SallesRecord", x => x.Id);
+                    table.PrimaryKey("PK_SalesRecord", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SallesRecord_Saller_SallerId",
+                        name: "FK_SalesRecord_Saller_SallerId",
                         column: x => x.SallerId,
-                        principalTable: "Saller",
+                        principalTable: "Seller",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Saller_DepartmentId",
-                table: "Saller",
+                table: "Seller",
                 column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SallesRecord_SallerId",
-                table: "SallesRecord",
+                name: "IX_SalesRecord_SallerId",
+                table: "SalesRecord",
                 column: "SallerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "SallesRecord");
+                name: "SalesRecord");
 
             migrationBuilder.DropTable(
-                name: "Saller");
+                name: "Seller");
         }
     }
 }

@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace SalesWebMvc.Models
 {
-    public class SallesRecord
+    public class SalesRecord
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public double Amount { get; set; }
         public SaleStatus SalesStatus { get; set; }
-        public Saller Saller { get; set; }
+        public Seller Saller { get; set; }
 
-        public SallesRecord()
+        public SalesRecord()
         {
 
         }
         
-        public SallesRecord(int id, DateTime date, double amount, SaleStatus salesStatus, Saller saller)
+        public SalesRecord(int id, DateTime date, double amount, SaleStatus salesStatus, Seller saller)
         {
             Id = id;
             Date = date;
