@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SalesWebMvc.Migrations
 {
-    public partial class SallerRecord_Saller : Migration
+    public partial class SellerRecord_Seller : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,9 +22,9 @@ namespace SalesWebMvc.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Saller", x => x.Id);
+                    table.PrimaryKey("PK_Seller", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Saller_Department_DepartmentId",
+                        name: "FK_Seller_Department_DepartmentId",
                         column: x => x.DepartmentId,
                         principalTable: "Department",
                         principalColumn: "Id",
@@ -40,28 +40,28 @@ namespace SalesWebMvc.Migrations
                     Date = table.Column<DateTime>(nullable: false),
                     Amount = table.Column<double>(nullable: false),
                     SalesStatus = table.Column<int>(nullable: false),
-                    SallerId = table.Column<int>(nullable: true)
+                    SellerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SalesRecord", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SalesRecord_Saller_SallerId",
-                        column: x => x.SallerId,
+                        name: "FK_SalesRecord_Seller_SellerId",
+                        column: x => x.SellerId,
                         principalTable: "Seller",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Saller_DepartmentId",
+                name: "IX_Seller_DepartmentId",
                 table: "Seller",
                 column: "DepartmentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SalesRecord_SallerId",
+                name: "IX_SalesRecord_SellerId",
                 table: "SalesRecord",
-                column: "SallerId");
+                column: "SellerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

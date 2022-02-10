@@ -9,8 +9,8 @@ using SalesWebMvc.Data;
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20220204104351_SallerRecord_Saller")]
-    partial class SallerRecord_Saller
+    [Migration("20220204104351_SellerRecord_Seller")]
+    partial class SellerRecord_Seller
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,7 +31,7 @@ namespace SalesWebMvc.Migrations
                     b.ToTable("Department");
                 });
 
-            modelBuilder.Entity("SalesWebMvc.Models.Saller", b =>
+            modelBuilder.Entity("SalesWebMvc.Models.Seller", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -50,7 +50,7 @@ namespace SalesWebMvc.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Saller");
+                    b.ToTable("Seller");
                 });
 
             modelBuilder.Entity("SalesWebMvc.Models.SalesRecord", b =>
@@ -64,16 +64,16 @@ namespace SalesWebMvc.Migrations
 
                     b.Property<int>("SalesStatus");
 
-                    b.Property<int?>("SallerId");
+                    b.Property<int?>("SellerId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SallerId");
+                    b.HasIndex("SellerId");
 
                     b.ToTable("SalesRecord");
                 });
 
-            modelBuilder.Entity("SalesWebMvc.Models.Saller", b =>
+            modelBuilder.Entity("SalesWebMvc.Models.Seller", b =>
                 {
                     b.HasOne("SalesWebMvc.Models.Department", "Department")
                         .WithMany()
@@ -82,9 +82,9 @@ namespace SalesWebMvc.Migrations
 
             modelBuilder.Entity("SalesWebMvc.Models.SalesRecord", b =>
                 {
-                    b.HasOne("SalesWebMvc.Models.Saller", "Saller")
+                    b.HasOne("SalesWebMvc.Models.Seller", "Seller")
                         .WithMany("SalesRecords")
-                        .HasForeignKey("SallerId");
+                        .HasForeignKey("SellerId");
                 });
 #pragma warning restore 612, 618
         }
