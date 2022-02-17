@@ -43,3 +43,4 @@ D:\Dev\C#\Orientação a Objeto C#\Exercicios_sobre_objetos\SalesWebMvc\obj\Debu
 D:\Dev\C#\Orientação a Objeto C#\Exercicios_sobre_objetos\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Create.cshtml.g.cs
 D:\Dev\C#\Orientação a Objeto C#\Exercicios_sobre_objetos\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Delete.cshtml.g.cs
 D:\Dev\C#\Orientação a Objeto C#\Exercicios_sobre_objetos\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Details.cshtml.g.cs
+D:\Dev\C#\Orientação a Objeto C#\Exercicios_sobre_objetos\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Edit.cshtml.g.cs
