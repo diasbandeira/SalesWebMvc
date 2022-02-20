@@ -10,7 +10,7 @@ namespace SalesWebMvc.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "{0} required")]
-        [Range(3, 50, ErrorMessage = "{0} must be from {1} to {2}")]
+        [StringLength(250, MinimumLength = 3, ErrorMessage = "{0} must be from {2} to {1}")]
         public string Name { get; set; }
         [Required(ErrorMessage = "{0} required")]
         [EmailAddress(ErrorMessage = "Enter a email valid")]
@@ -24,6 +24,7 @@ namespace SalesWebMvc.Models
         [Required(ErrorMessage = "{0} required")]
         [Display(Name = "Base Salary")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
+        [Range(100.00, 10000.00, ErrorMessage = "{0} must be from {1} to {2}")]
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
