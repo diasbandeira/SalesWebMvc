@@ -36,9 +36,16 @@ namespace SalesWebMvc.Models.Services
 
         public async Task DeleteAsync(int id)
         {
-            var obj = _context.Seller.Find(id);
-            _context.Remove(obj);
-            await _context.SaveChangesAsync();
+            try
+            {
+                var obj = await _context.Seller.FindAsync(id);
+                _context.Remove(obj);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException e)
+            {
+                throw new IntegrityException("Não foi possivel excluir por que existem vendas associadas a(o) vendedor(a)");
+            }
         }
 
         public async Task UpdateAsync(Seller seller)
