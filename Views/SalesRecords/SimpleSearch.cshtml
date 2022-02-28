@@ -50,31 +50,44 @@
                         @Html.DisplayNameFor(model => model.Amount)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.SalesStatus)
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
+                        @Html.DisplayNameFor(model => model.SalesStatus);
+
+#line default
+#line hidden
+#line 58 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                 foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Id)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Date)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Seller.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Seller.Department.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Amount)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SalesStatus)
+                    
+
+#line default
+#line hidden
+#line 62 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                       __o = Html.DisplayFor(modelItem => item.Id);
+
+#line default
+#line hidden
+#line 65 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                       __o = Html.DisplayFor(modelItem => item.Date);
+
+#line default
+#line hidden
+#line 68 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                       __o = Html.DisplayFor(modelItem => item.Seller.Name);
+
+#line default
+#line hidden
+#line 71 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                       __o = Html.DisplayFor(modelItem => item.Seller.Department.Name);
+
+#line default
+#line hidden
+#line 74 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                       __o = Html.DisplayFor(modelItem => item.Amount);
+
+#line default
+#line hidden
+#line 77 "d:/Dev/C#/Orientação a Objeto C#/Exercicios_sobre_objetos/SalesWebMvc/Views/SalesRecords/SimpleSearch.cshtml"
+                       __o = Html.DisplayFor(modelItem => item.SalesStatus)
                         </td>
                     </tr>
                 }
